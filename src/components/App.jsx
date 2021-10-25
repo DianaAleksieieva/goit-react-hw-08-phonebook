@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react'
+import React, {  useEffect, Suspense, lazy } from 'react'
 import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { Container} from './App.styled.jsx';
-import HomeView from './views/HomeView/HomeView';
-import HelloPage from './views/HelloPage/HelloPage';
-import RegisterView from './views/RegisterView/RegisterView';
-import LoginView from './views/LoginView/LoginView';
 import AppBar from './AppBar/AppBar';
 import { authOperations } from '.././redux/auth';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const HelloPage = lazy(() => import('./views/HelloPage/HelloPage'));
+const RegisterView = lazy(() => import('./views/RegisterView/RegisterView'));
+const LoginView = lazy(() => import('./views/LoginView/LoginView'));
+const ContactBookView = lazy(() => import('./views/ContactBookView/ContactBookView'));
 
 export default function App() {
 const dispatch = useDispatch();
@@ -17,16 +21,19 @@ const dispatch = useDispatch();
   }, [dispatch]);
 
   return (
-    <Container >
+    <>
       <AppBar />
-
+     <Container >
       <Switch>
-        <Route exact path="/" component={HelloPage} />
-        <Route exact path="/contacts" component={HomeView} />
-        <Route path="/register" component={RegisterView} />
-        <Route path="/login" component={LoginView} />
+        <Suspense fallback={<p>Загружаем...</p>}>
+        <PublicRoute  exact path="/" component={HelloPage}/> 
+        <PrivateRoute exact path="/contacts" component={ContactBookView} />
+        <PublicRoute  path="/register" component={RegisterView} />
+        <PublicRoute  path="/login" component={LoginView} />
+        </Suspense>
       </Switch>
       
-    </Container>
+      </Container>
+      </>
     )
 }

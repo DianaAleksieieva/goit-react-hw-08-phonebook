@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { WrapContainer } from '../AppBar.styled.jsx';
 
 export default function LogOutMenu() {
   return (
-    <div>
+    <WrapContainer>
     <NavLink
       to="/register"
         exact>
@@ -12,6 +13,6 @@ export default function LogOutMenu() {
       <NavLink to="/login" exact>
         Login
       </NavLink>
-    </div>
+    </WrapContainer>
   );
 }
