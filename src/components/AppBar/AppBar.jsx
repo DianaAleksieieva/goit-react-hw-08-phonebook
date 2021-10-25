@@ -16,15 +16,15 @@ export default function AppBar() {
         <Container>
           <Navbar.Brand >PhoneBook</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link >
+           
               <NavLink to="/" exact>Hello</NavLink>
-            </Nav.Link>
-            <Nav.Link >
+            
+            
               <NavLink to="/contacts" exact>PhoneBook</NavLink>
-            </Nav.Link>
-            <Nav.Link >
+            
+           
               {isLoggedIn ? <LogInMenu /> : <LogOutMenu />}
-            </Nav.Link>
+            
     </Nav>
     </Container>
   </Navbar>
