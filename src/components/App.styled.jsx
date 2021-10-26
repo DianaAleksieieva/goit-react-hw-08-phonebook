@@ -8,3 +8,7 @@ padding: 10px;
 padding-right:20px;
 padding-left: 20px;
 `;
+
+export const H2 = styled.h2`
+text-align: center
+`

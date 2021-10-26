@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { authOperations } from '../../../redux/auth';
+import { Form,Button } from 'react-bootstrap';
 
 export default function RegisterView() {
   const [email, setEmail] = useState('');
@@ -32,28 +33,21 @@ export default function RegisterView() {
     return (
         <div>
             <h2>Login</h2>
-    <form onSubmit={handleSubmit}>
-     <lable> Mail
-      <input
-        value={email}
-        onChange={handleChange}
-        type="text"
-        name="email"
-        title="Почта"
-        required />
-    </lable>          
+    <Form onSubmit={handleSubmit}>
+     <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email"name="email" value={email} onChange={handleChange} placeholder="Enter email" />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>   
                 
-    <lable> Password
-      <input
-        value={password}
-        onChange={handleChange}
-        type="tel"
-        name="password"
-        title="Пароль"
-        required />
-    </lable>
-    <button type="submit">LogIn</button>
-            </form>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" value={password} onChange={handleChange} name="password" />
+  </Form.Group>
+    <Button variant="secondary" type="submit">LogIn</Button>
+            </Form>
             </div>
     )
 }

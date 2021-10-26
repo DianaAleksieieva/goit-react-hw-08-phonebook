@@ -4,9 +4,14 @@ export const Container = styled.nav`
 display: flex;
 justify-content: space-between;
 `;
-export const NavLinkStyled = styled.a`
-text-decoration:none;
-`
-export const WrapContainer = styled.div`
-margin-right:10px;
+export const Wrap = styled.div`
+margin-right:0px;
+display: flex;
+justify-content: space-between;
+width: 100%
 `;
+export const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+  color: '#F0F0F0'
+};

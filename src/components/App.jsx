@@ -1,6 +1,6 @@
 import React, {  useEffect, Suspense, lazy } from 'react'
 import { useDispatch } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import { Container} from './App.styled.jsx';
 import AppBar from './AppBar/AppBar';
 import { authOperations } from '.././redux/auth';

@@ -1,18 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { WrapContainer } from '../AppBar.styled.jsx';
+import { linkStyle } from '../AppBar.styled'
+import { Nav } from 'react-bootstrap';
+
 
 export default function LogOutMenu() {
   return (
-    <WrapContainer>
-    <NavLink
+    <Nav className="me-auto">
+    <NavLink style={linkStyle}
       to="/register"
         exact>
         Registration
       </NavLink>
-      <NavLink to="/login" exact>
+      <NavLink style={linkStyle}
+        to="/login" exact>
         Login
       </NavLink>
-    </WrapContainer>
+    </Nav>
   );
 }
