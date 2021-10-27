@@ -1,7 +1,7 @@
 import React from 'react';
 import { P, DeleteButton } from './ContactList.styled.jsx';
 import { useDispatch } from 'react-redux';
-import { contactsOperations } from '../../../../redux/contacts';
+import { contactsOperations } from '../../redux/contacts';
 const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();
   const deleteContact = id => dispatch(contactsOperations.deleteContact(id));

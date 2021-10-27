@@ -5,6 +5,7 @@ const initialState = {
   user: { name: null, email: null },
   token: 'null',
   isLoggedIn: false,
+  isRegistered: false,
 };
 
 const authSlice = createSlice({
@@ -15,6 +16,7 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+      state.isRegistered = true;
     },
     [authOperations.logIn.fulfilled](state, action) {
       state.user = action.payload.user;

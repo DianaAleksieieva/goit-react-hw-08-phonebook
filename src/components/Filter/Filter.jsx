@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { contactsSelectors, changeFilter } from '../../../../redux/contacts';
+import { contactsSelectors, changeFilter } from '../../redux/contacts';
 import { Form } from 'react-bootstrap'
 
 const Filter = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { contactsSelectors } from '../../../../redux/contacts';
+import { contactsSelectors } from '../../redux/contacts';
 import { ContactStyledList } from './ContactList.styled.jsx';
 import ContactListItem from './ContactListItem'
 

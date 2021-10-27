@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import contactsOperations from '../../../../redux/contacts/contacts-operations';
-import { contactsSelectors } from '../../../../redux/contacts';
+import contactsOperations from '../../redux/contacts/contacts-operations';
+import { contactsSelectors } from '../../redux/contacts';
 import { useDispatch } from 'react-redux'
 import { Form,Button } from 'react-bootstrap'
 

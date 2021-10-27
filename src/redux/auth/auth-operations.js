@@ -18,7 +18,7 @@ const register = createAsyncThunk('auth/register', async (credentials, rejectVal
     token.set(data.token);
     return data;
   } catch (error) {
-    alert('Something is wrong with user information')
+    alert('The user with this email is already registered')
     return rejectValue(error)
   }
 });
@@ -29,6 +29,8 @@ const logIn = createAsyncThunk('auth/login', async (credentials, rejectValue) =>
     token.set(data.token);
     return data;
   } catch (error) {
+    console.log('1111')
+    alert('Wrong Password')
     return rejectValue(error)
   }
 });
